@@ -12,7 +12,7 @@
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Varrel Dwitantio P - Praktikum 12</title>
+  <title>BookStore</title>
 </head>
 
 <body>
@@ -42,9 +42,9 @@
         </div>
       </div>
       <div class="row mb-3">
-        <label for="penerbit" class="col-sm-2 col-form-label">Penerbit *</label>
+        <label for="penulis" class="col-sm-2 col-form-label">Penulis *</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="penerbit" name="penerbit" required>
+          <input type="text" class="form-control" id="penulis" name="penulis" required>
         </div>
       </div>
       <div class="row mb-3">
@@ -54,9 +54,23 @@
         </div>
       </div>
       <div class="row mb-3">
-        <label for="id_toko" class="col-sm-2 col-form-label">Toko *</label>
+        <label for="tahun" class="col-sm-2 col-form-label">Tahun *</label>
         <div class="col-sm-10">
-          <select class="form-control" id="id_toko" name="id_toko" required>
+          <input type="number" class="form-control" id="tahun" name="tahun" required>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="id_penerbit" class="col-sm-2 col-form-label">Penerbit *</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="id_penerbit" name="id_penerbit" required>
+            <option value="" selected>-</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="id_kategori" class="col-sm-2 col-form-label">Kategori *</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="id_kategori" name="id_kategori" required>
             <option value="" selected>-</option>
           </select>
         </div>
@@ -80,9 +94,15 @@
 
   <script>
     $(document).ready(function() {
-      $.get('model/toko.php', function(data) {
+      $.get('model/kategori.php', function(data) {
         $.each(data, function(key, value) {
-          $('#id_toko').append('<option value="' + value.id + '">' + value.nama + '</option>');
+          $('#id_kategori').append('<option value="' + value.id + '">' + value.nama + '</option>');
+        });
+      });
+
+      $.get('model/penerbit.php', function(data) {
+        $.each(data, function(key, value) {
+          $('#id_penerbit').append('<option value="' + value.id + '">' + value.nama + '</option>');
         });
 
         var params = window.location.search.substring(1).split('&');
@@ -98,9 +118,11 @@
             if (data.gambar != "") {
               $('#image_preview').attr('src', data.gambar);
             }
-            $('#penerbit').val(data.penerbit);
+            $('#penulis').val(data.penulis);
             $('#harga').val(data.harga);
-            $('#id_toko').val(data.id_toko);
+            $('#tahun').val(data.tahun);
+            $('#id_penerbit').val(data.id_penerbit);
+            $('#id_kategori').val(data.id_kategori);
           });
         }
 
