@@ -94,13 +94,13 @@
 
   <script>
     $(document).ready(function() {
-      $.get('model/kategori.php', function(data) {
+      $.get('model/kategori.php?action=getAll', function(data) {
         $.each(data, function(key, value) {
           $('#id_kategori').append('<option value="' + value.id + '">' + value.nama + '</option>');
         });
       });
 
-      $.get('model/penerbit.php', function(data) {
+      $.get('model/penerbit.php?action=getAll', function(data) {
         $.each(data, function(key, value) {
           $('#id_penerbit').append('<option value="' + value.id + '">' + value.nama + '</option>');
         });

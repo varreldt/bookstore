@@ -20,7 +20,7 @@ session_start();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-light mt-3">
+  <nav class="navbar navbar-expand-lg bg-light pt-3">
     <div class="container container-fluid">
       <a class="navbar-brand" href="#">Book Store</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -63,7 +63,7 @@ class Auth
 
     $sql = $this->db->prepare($query);
     $sql->bind_param(
-      'ssssi',
+      'ssss',
       $data['email'],
       $data['password'],
       $data['nama'],
