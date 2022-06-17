@@ -173,14 +173,15 @@ class Buku
 
     $sql = $this->db->prepare($query);
     $sql->bind_param(
-      'ssiisi',
+      'ssiisiii',
       $data['judul'],
       $data['penulis'],
       $data['harga'],
       $data['tahun'],
       $data['gambar'],
       $data['id_penerbit'],
-      $data['id_kategori']
+      $data['id_kategori'],
+      $data['kode_buku']
     );
 
     try {

@@ -183,7 +183,7 @@ session_start();
             '<a href="#" class="card-title text-decoration-none text-center">' + item.judul + '</a>' +
             '<div class="card-text">' +
             '<p>Penulis: ' + item.penulis + '</p>' +
-            <?php if (isset($_SESSION['email'])) : ?> '<a href="form.php?kode_buku=' + item.kode_buku + '" class="btn btn-primary btn-sm me-2 float-right"><i class="fa-solid fa-edit"></i></a>' +
+            <?php if (isset($_SESSION['email'])) : ?> '<a href="form.php?action=update&kode_buku=' + item.kode_buku + '" class="btn btn-primary btn-sm me-2 float-right"><i class="fa-solid fa-edit"></i></a>' +
               '<a href="#" onclick="hapus(' + item.kode_buku + ')" class="btn btn-danger btn-sm float-right"><i class="fa-solid fa-trash"></i></a>' +
             <?php endif; ?> '</div>' +
             '</div>' +
@@ -211,8 +211,7 @@ session_start();
           '<p>Penulis: ' + item.penulis + '</p>' +
           <?php if (isset($_SESSION['email'])) : ?> '<a href="form.php?kode_buku=' + item.kode_buku + '" class="btn btn-primary btn-sm me-2 float-right"><i class="fa-solid fa-edit"></i></a>' +
             '<a href="#" onclick="hapus(' + item.kode_buku + ')" class="btn btn-danger btn-sm float-right"><i class="fa-solid fa-trash"></i></a>' +
-          <?php endif; ?> +
-          '</div>' +
+          <?php endif; ?> '</div>' +
           '</div>' +
           '</div>' +
           '</div>' +

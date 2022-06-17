@@ -57,7 +57,7 @@ session_start();
   <div class="container py-5">
     <div class="row mb-3">
       <div class="col-lg-3">
-        <h3>Kategori Buku</h3>
+        <h3>Penerbit Buku</h3>
       </div>
       <div class="col-lg-9">
         <a href="form.php" class="btn btn-primary float-end"><i class="fa-solid fa-plus-circle"></i> Tambah</a>

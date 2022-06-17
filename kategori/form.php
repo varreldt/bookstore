@@ -55,7 +55,7 @@ session_start();
   </nav>
 
   <div class="container py-5">
-    <h1>Tambah Kategori</h1>
+    <h1 id="header">Tambah Kategori</h1>
     <form>
       <input type="hidden" id="id" name="id" value="0">
 
@@ -90,6 +90,7 @@ session_start();
       }
 
       if (params[0][0] == "action" && params[0][1] == "update") {
+        $("#header").text("Update Kategori");
         $.get("../model/kategori.php?action=detail&id=" + params[1][1], function(data) {
           $('#id').val(data.id);
           $('#nama').val(data.nama);

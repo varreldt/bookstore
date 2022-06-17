@@ -18,7 +18,7 @@
 <body>
 
   <div class="container py-5">
-    <h1>Tambah Buku</h1>
+    <h1 id="header">Tambah Buku</h1>
     <form enctype="multipart/form-data">
       <input type="hidden" id="kode_buku" name="kode_buku" value="0">
       <input type="hidden" id="old_gambar" name="old_gambar" value="0">
@@ -111,6 +111,7 @@
         }
 
         if (params[0][0] == "action" && params[0][1] == "update") {
+          $("#header").html("Update Buku");
           $.get("model/buku.php?action=detail&kode_buku=" + params[1][1], function(data) {
             $('#kode_buku').val(data.kode_buku);
             $('#judul').val(data.judul);
